@@ -201,9 +201,12 @@ class _DeliveryListViewState extends State<DeliveryListView> {
 
   updatePickUpTaskStatus() async {
     Map data = await Domain().updateDeliveryOrderStatus(widget.task.taskId);
+    Navigator.of(context).pop();
     if (data['status'] == '1') {
       showSnackBar('update_success');
-      Navigator.of(context).pop();
+    } else if (data['status'] == '3') {
+      showSnackBar('incompleted_job');
+      return;
     }
     setState(() {
       widget.task.status = 1;

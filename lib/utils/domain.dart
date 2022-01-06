@@ -9,6 +9,8 @@ class Domain {
 
   static Uri registration = Uri.parse(domain + 'mobile_api/registration/index.php');
   static Uri task = Uri.parse(domain + 'mobile_api/task/index.php');
+  static Uri notification = Uri.parse(domain + 'mobile_api/notification/index.php');
+
   static Uri proofImgPath = Uri.parse(domain + 'mobile_api/task/image/');
 
   /*
@@ -257,8 +259,29 @@ class Domain {
   * */
   deleteProofOfDelivery(deliveryReferenceId, imageName) async {
     print(deliveryReferenceId);
-    var response = await http
-        .post(Domain.task, body: {'delete_image': '1', 'image_name': imageName, 'delivery_reference_id': deliveryReferenceId.toString()});
+    var response =
+        await http.post(Domain.task, body: {'delete_image': '1', 'image_name': imageName, 'delivery_reference_id': deliveryReferenceId.toString()});
+    return jsonDecode(response.body);
+  }
+
+  /*
+  * register device token
+  * */
+  registerDeviceToken(token) async {
+    var response = await http.post(Domain.notification,
+        body: {'register_token': '1', 'token': token, 'driver_id': Driver.fromJson(await SharePreferences().read("driver")).driverId});
+    return jsonDecode(response.body);
+  }
+
+  /*
+  * update token when log out
+  * */
+  updateTokenStatus(token) async {
+    var response = await http.post(Domain.notification, body: {
+      'log_out': '1',
+      'token': token,
+      'driver_id': Driver.fromJson(await SharePreferences().read("driver")).driverId,
+    });
     return jsonDecode(response.body);
   }
 }

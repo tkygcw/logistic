@@ -337,7 +337,7 @@ class _ProofOfDeliveryState extends State<ProofOfDelivery> {
               style: const TextStyle(color: Colors.black87, fontSize: 14),
             ),
             TextSpan(
-              text: widget.deliveryReference.pod,
+              text: widget.deliveryReference.podTime,
               style: const TextStyle(color: Colors.red, fontSize: 14, fontWeight: FontWeight.bold),
             ),
           ],

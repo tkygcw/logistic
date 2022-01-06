@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "106336912352",
+    "project_id": "logisticdriver-dcb72",
+    "storage_bucket": "logisticdriver-dcb72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106336912352:android:7d0721ab37277118dc6185",
+        "android_client_info": {
+          "package_name": "channelsoft.driver_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106336912352-h7e285mn70ns9kr3mod1vrc553k2uvk3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq5x99Zd2ZlkTzphACeB5fOGAF1DxOYEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106336912352-h7e285mn70ns9kr3mod1vrc553k2uvk3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

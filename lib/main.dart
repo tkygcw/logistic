@@ -1,23 +1,29 @@
-import 'package:driver_app/page/forgot_password.dart';
 import 'package:driver_app/page/home.dart';
 import 'package:driver_app/page/login_page.dart';
 import 'package:driver_app/page/register_page.dart';
 import 'package:driver_app/translation/app_language.dart';
 import 'package:driver_app/translation/app_localizations.dart';
 import 'package:driver_app/utils/global_variable.dart';
+import 'package:driver_app/utils/notification_service.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'dart:io' show Platform;
 
 import 'page/loading.dart';
 
 Future<void> main() async {
   statusBarColor();
   WidgetsFlutterBinding.ensureInitialized();
-//  await Firebase.initializeApp();
-//  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  if (Platform.isAndroid) {
+    await Firebase.initializeApp();
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    NotificationService().init();
+  }
   AppLanguage appLanguage = AppLanguage();
   await appLanguage.fetchLocale();
   runApp(MyApp(
@@ -93,10 +99,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-//  await Firebase.initializeApp();
-//  FlutterAppBadger.updateBadgeCount(1);
-//}
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print('main: $message');
+}
 
 statusBarColor() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

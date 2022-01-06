@@ -124,5 +124,19 @@
 	"password_update_success": "密码更新成功!",
 	"wrong_task": "包裹不正确！此包裹不在此任务内！",
 	"admin": "管理员: ",
-	"driver": "司机: "
+	"driver": "司机: ",
+	"bid_no": "投标编号",
+	"proof_of_delivery": "交货证明",
+	"take_photo": "点击上图拍照。",
+	"taken_on": "这张照片拍摄于",
+	"remove_photo": "删除照片",
+	"upload_photo": "上传图片",
+	"upload_photo_request": "上传请求",
+	"upload_photo_description_1": "确认上传这张图片？\n",
+	"take_photo_from_where": "你想从哪里拍照？",
+	"gallery": "相册",
+	"camera": "相机",
+	"delete_request": "确认删除？",
+	"delete_product_image": "您确定要替换新图片吗？\n*此图片将被永久删除",
+	"incompleted_job": "失败！还有未完成的工作！"
 }

@@ -143,7 +143,7 @@ class _DeliveryListState extends State<DeliveryList> {
             _onRefresh();
           });
         },
-        button: '${Utils.getText(context, 'no_agent_found')}',
+        button: '${Utils.getText(context, 'refresh')}',
         drawable: 'drawable/no_results.png');
   }
 }

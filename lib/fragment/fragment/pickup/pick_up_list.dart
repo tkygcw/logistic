@@ -146,7 +146,7 @@ class _PickUpPageState extends State<PickUpPage> {
             _onRefresh();
           });
         },
-        button: '${Utils.getText(context, 'no_agent_found')}',
+        button: '${Utils.getText(context, 'refresh')}',
         drawable: 'drawable/no_results.png');
   }
 }

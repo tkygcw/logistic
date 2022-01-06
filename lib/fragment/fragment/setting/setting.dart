@@ -2,6 +2,7 @@ import 'package:driver_app/fragment/fragment/setting/profile.dart';
 import 'package:driver_app/fragment/fragment/setting/reset_password.dart';
 import 'package:driver_app/page/loading.dart';
 import 'package:driver_app/share_widget/language_setting.dart';
+import 'package:driver_app/utils/domain.dart';
 import 'package:driver_app/utils/share_preference.dart';
 import 'package:driver_app/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -312,7 +313,14 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   logOut() async {
-    SharePreferences().clear();
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context) => const LoadingPage()), ModalRoute.withName('/'));
+    String token = await SharePreferences().read('token');
+    Map data = await Domain().updateTokenStatus(token.toString());
+    print(data);
+    if (data['status'] == '1') {
+      SharePreferences().clear();
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context) => const LoadingPage()), ModalRoute.withName('/'));
+    } else {
+      Utils.showSnackBar(context, 'something_went_wrong');
+    }
   }
 }

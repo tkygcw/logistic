@@ -137,5 +137,6 @@
   "gallery": "Gallery",
   "camera": "Camera",
   "delete_request": "Confirm to delete?",
-  "delete_product_image": "Are you sure that you want to replace a new picture?\n*This picture will be removed permanently"
+  "delete_product_image": "Are you sure that you want to replace a new picture?\n*This picture will be removed permanently",
+  "incompleted_job": "Failed! Incompleted job found!"
 }

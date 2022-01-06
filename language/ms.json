@@ -124,5 +124,19 @@
   "password_update_success": "Berjaya Kemas Kini Kata Laluan!",
   "wrong_task": "Pakej tidak betul! Pakej ini tidak termasuk dalam tugas ini!",
   "admin": "Admin: ",
-  "driver": "Driver: "
+  "driver": "Driver: ",
+  "bid_no": "Nombor Tawaran",
+  "proof_of_delivery": "Bukti penghantaran",
+  "take_photo": "Klik gambar di atas untuk mengambil gambar.",
+  "taken_on": "Gambar ini diambil pada",
+  "remove_photo": "Alih Keluar Foto",
+  "upload_photo": "Muatnaik gambar",
+  "upload_photo_request": "Permintaan Muat Naik",
+  "upload_photo_description_1": "Sahkan untuk memuat naik gambar ini?\n",
+  "take_photo_from_where": "Dari mana anda mahu mengambil gambar?",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "delete_request": "Sahkan untuk memadam?",
+  "delete_product_image": "Adakah anda pasti mahu menggantikan gambar baharu?\n*Gambar ini akan dialih keluar selama-lamanya",
+  "incompleted_job": "Gagal! Kerja tidak siap ditemui!"
 }
